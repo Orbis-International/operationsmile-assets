@@ -1,0 +1,24 @@
+# OS generated files #
+######################
+
+.DS_Store*
+ehthumbs.db
+._*
+*~
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+.DS_Store
+.idea
+pimple.json
+.phpstorm.meta.php
+
+# Development #
+######################
+node_modules/
+temp/prod/*
+temp/test/*
+!temp/prod/.gitkeep
+!temp/test/.gitkeep
