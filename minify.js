@@ -46,3 +46,5 @@ minify({
     output: './dist/prod/app.min.css',
     callback: function(err, min) {}
 });
+
+console.log( 'Minify complete' );
