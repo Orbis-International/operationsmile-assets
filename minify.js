@@ -47,4 +47,4 @@ minify({
     callback: function(err, min) {}
 });
 
-console.log( 'Minify complete' );
+console.log( '*** Minify complete' );
