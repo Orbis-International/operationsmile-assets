@@ -26,6 +26,39 @@ confirmEmailField.oninput = validateEmail;
 
 $(function () {
 
+    var errorMessage = "Please enter no more than 60000 characters.";
+
+    $( document ).find( "textarea" ).on( "input change propertychange", function() {
+
+        var pattern = $( this ).attr( "pattern" );
+
+        if(typeof pattern !== typeof undefined && pattern !== false)
+        {
+            var patternRegex = new RegExp( "^" + pattern.replace(/^\^|\$$/g, '') + "$", "g" );
+
+            hasError = !$( this ).val().match( patternRegex );
+
+            if ( typeof this.setCustomValidity === "function")
+            {
+                this.setCustomValidity( hasError ? errorMessage : "" );
+            }
+            else
+            {
+                $( this ).toggleClass( "error", !!hasError );
+                $( this ).toggleClass( "ok", !hasError );
+
+                if ( hasError )
+                {
+                    $( this ).attr( "title", errorMessage );
+                }
+                else
+                {
+                    $( this ).removeAttr( "title" );
+                }
+            }
+        }
+
+    });
 
     function isVisible(element) {
         return element.offsetWidth > 0 && element.offsetHeight > 0;
