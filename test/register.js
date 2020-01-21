@@ -27,6 +27,7 @@ confirmEmailField.oninput = validateEmail;
 $(function () {
 
     var errorMessage = "Please enter no more than 60000 characters.";
+    var hasError;
 
     $( document ).find( "textarea" ).on( "input change propertychange", function() {
 
@@ -35,8 +36,9 @@ $(function () {
         if(typeof pattern !== typeof undefined && pattern !== false)
         {
             var patternRegex = new RegExp( "^" + pattern.replace(/^\^|\$$/g, '') + "$", "g" );
+            var $content = $( this ).val().replace(/[\r\n]+/gm, '');
 
-            hasError = !$( this ).val().match( patternRegex );
+            hasError = !$content.match( patternRegex );
 
             if ( typeof this.setCustomValidity === "function")
             {
