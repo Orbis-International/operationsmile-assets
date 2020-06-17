@@ -132,7 +132,7 @@ body {
     background-color: transparent !important;
 }
 
-button.is-link.confirmation-button {
+.button.is-link.confirmation-button {
     color: white;
     border-radius: 30px;
     background-color: #00a3e0;
