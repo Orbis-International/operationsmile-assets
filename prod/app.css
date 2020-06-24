@@ -131,3 +131,10 @@ body {
 .goog-text-highlight {
     background-color: transparent !important;
 }
+
+.button.is-link.confirmation-button {
+    color: white;
+    border-radius: 30px;
+    min-width: 262px;
+    background-color: #00a3e0;
+}
