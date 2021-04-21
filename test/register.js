@@ -9,7 +9,7 @@ function validateEmail(){
     }
 
     if(	emailField.validity.typeMismatch ) {
-        emailField.setCustomValidity('Please enter a valid email address.');
+        emailField.setCustomValidity('Please enter a valid Email Address.');
     } else {
         emailField.setCustomValidity('');
     }
