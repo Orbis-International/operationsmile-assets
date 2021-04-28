@@ -159,12 +159,14 @@ $(function () {
     });
 
     $('.timezone-switcher').on('click', function(e) {
+        console.log("********timezone *****");
         e.preventDefault();
         $('#timezone-modal').addClass('is-active');
         $('html').addClass('is-clipped');
     });
 
     $('.modal-cancel').on('click', function(e) {
+        console.log("********timezone *****");
         e.preventDefault();
         $('#timezone-modal').removeClass('is-active');
         $('html').removeClass('is-clipped');
