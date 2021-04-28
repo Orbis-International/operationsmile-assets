@@ -1,6 +1,6 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
-    setInterval(function(){
+    setTimeout(function(){
         var $registerInputs = $('#register input[type=text]');
         console.log("*******Validate.js**********");
         $registerInputs.on('invalid', function () {
