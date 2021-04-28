@@ -1,5 +1,6 @@
-$(function () {
-    setTimeout(function(){
+$(document).ready(function(){
+    $(function () {
+    setInterval(function(){
         var $registerInputs = $('#register input[type=text]');
         console.log("*******Validate.js**********");
         $registerInputs.on('invalid', function () {
@@ -14,4 +15,5 @@ $(function () {
             $(this).get(0).setCustomValidity('');
         });
     }, 5000);
+    });
 });

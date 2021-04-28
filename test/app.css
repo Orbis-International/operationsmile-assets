@@ -36,6 +36,7 @@
 /* Google Translate Widget */
 body {
     top: 0 !important;
+    background: lightblue;
 }
 
 #google_translate_element {
