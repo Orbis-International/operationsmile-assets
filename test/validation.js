@@ -1,4 +1,4 @@
-$(function () {
+setTimeout($(function () {
     var $registerInputs = $('#register input[type=text]');
 
     $registerInputs.on('invalid', function () {
@@ -12,4 +12,4 @@ $(function () {
     $registerInputs.on('input, change', function () {
         $(this).get(0).setCustomValidity('');
     });
-});
+}), 3000);
