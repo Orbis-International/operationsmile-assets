@@ -1,8 +1,8 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
     setTimeout(function(){
+        console.log("*******Validation error messages**********");
         var $registerInputs = $('#register input[type=text]');
-        console.log("*******Validate.js**********");
         $registerInputs.on('invalid', function () {
             if ($(this).get(0).validity.valueMissing) {
                 $(this).get(0).setCustomValidity('Please fillll out this field.');
