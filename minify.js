@@ -19,6 +19,13 @@ minify({
 });
 
 minify({
+    compressor: noCompress,
+    input: './test/validation.js',
+    output: './dist/test/validation.min.js',
+    callback: function(err, min) {}
+});
+
+minify({
     compressor: cssnano,
     input: './test/app.css',
     output: './dist/test/app.min.css',
