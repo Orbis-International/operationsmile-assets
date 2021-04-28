@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $(function () {
+$(window).on('load', function () {
+    console.log("Window Loaded");
     setInterval(function(){
         var $registerInputs = $('#register input[type=text]');
         console.log("*******Validate.js**********");
@@ -15,5 +15,4 @@ $(document).ready(function(){
             $(this).get(0).setCustomValidity('');
         });
     }, 5000);
-    });
 });
