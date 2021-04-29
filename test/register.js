@@ -166,4 +166,4 @@ function init() {
             window.location.pathname = window.location.pathname + '/tz/' + selectedTz;
         }
     });
-});
+};
