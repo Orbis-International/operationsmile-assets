@@ -3,22 +3,22 @@ var emailField = document.getElementById('email-address')
 
 function validateEmail(){
     if(emailField.value.trim() != confirmEmailField.value.trim()) {
-        confirmEmailField.setCustomValidity('Please enter the same email address again.');
+        confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
     } else {
         confirmEmailField.setCustomValidity('');
     }
 
-    // if(	emailField.validity.typeMismatch ) {
-    //     emailField.setCustomValidity('Please enter a valid Email Address.');
-    // } else {
-    //     emailField.setCustomValidity('');
-    // }
+    if(	emailField.validity.typeMismatch ) {
+        emailField.setCustomValidity(validation_message("invalidEmail"));
+    } else {
+        emailField.setCustomValidity('');
+    }
 
-    // if( emailField.validity.patternMismatch ) {
-    //     emailField.setCustomValidity('Please enter no more than 128 characters.');
-    // } else {
-    //     emailField.setCustomValidity('');
-    // }
+    if( emailField.validity.patternMismatch ) {
+        emailField.setCustomValidity(validation_message("value128Characters"));
+    } else {
+        emailField.setCustomValidity('');
+    }
 }
 
 emailField.onchange = validateEmail;
