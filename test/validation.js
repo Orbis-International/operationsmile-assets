@@ -21,7 +21,7 @@ $(window).on('load', function () {
         $registerInputs.on('input, change', function () {
             $(this).get(0).setCustomValidity('');
         });
-        
+
         function validation_message(key){
             return validation_json[lang][error_category[key]]
         }
@@ -49,5 +49,16 @@ $(window).on('load', function () {
         emailField.onchange = validateEmail;
         confirmEmailField.onchange = validateEmail;
         setErrorMessage(validation_message("value60000Characters"));
+
+        function getErrorCategories(){
+            return {
+                "valueMissing": "Please fill out this field.",
+                "value128Characters": "Please enter no more than 128 characters.",
+                "confirmEmail": "Please enter the same email address again.",
+                "invalidEmail": "Please enter a valid Email Address.",
+                "value60000Characters": "Please enter no more than 60000 characters."
+            }
+        }
+        
     }, 3000);
 });

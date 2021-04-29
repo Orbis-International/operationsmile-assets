@@ -1,13 +1,3 @@
-function getErrorCategories(){
-    return {
-        "valueMissing": "Please fill out this field.",
-        "value128Characters": "Please enter no more than 128 characters.",
-        "confirmEmail": "Please enter the same email address again.",
-        "invalidEmail": "Please enter a valid Email Address.",
-        "value60000Characters": "Please enter no more than 60000 characters."
-    }
-}
-
 function localization_json(){
        return  {
             "en" : {
