@@ -8,17 +8,17 @@ function validateEmail(){
         confirmEmailField.setCustomValidity('');
     }
 
-    if(	emailField.validity.typeMismatch ) {
-        emailField.setCustomValidity('Please enter a valid Email Address.');
-    } else {
-        emailField.setCustomValidity('');
-    }
+    // if(	emailField.validity.typeMismatch ) {
+    //     emailField.setCustomValidity('Please enter a valid Email Address.');
+    // } else {
+    //     emailField.setCustomValidity('');
+    // }
 
-    if( emailField.validity.patternMismatch ) {
-        emailField.setCustomValidity('Please enter no more than 128 characters.');
-    } else {
-        emailField.setCustomValidity('');
-    }
+    // if( emailField.validity.patternMismatch ) {
+    //     emailField.setCustomValidity('Please enter no more than 128 characters.');
+    // } else {
+    //     emailField.setCustomValidity('');
+    // }
 }
 
 emailField.onchange = validateEmail;
