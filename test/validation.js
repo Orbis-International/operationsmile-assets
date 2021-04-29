@@ -59,6 +59,6 @@ $(window).on('load', function () {
                 "value60000Characters": "Please enter no more than 60000 characters."
             }
         }
-        
-    }, 3000);
+
+    }, 1000);
 });
