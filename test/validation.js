@@ -46,6 +46,6 @@ $(window).on('load', function () {
 
         emailField.onchange = validateEmail;
         confirmEmailField.onchange = validateEmail;
-        setErrorMessage("vishnu");
+        setErrorMessage(validation_message("value60000Characters"));
     }, 3000);
 });
