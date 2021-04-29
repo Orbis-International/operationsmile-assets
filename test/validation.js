@@ -1,12 +1,12 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
+    var newScript = document.createElement('script');
+    newScript.type = 'text/javascript';
+    newScript.src = './localization.js';
+    document.getElementsByTagName('head')[0].appendChild(newScript);
+    var validation_json = localization_json();
     setTimeout(function(){
-        var newScript = document.createElement('script');
-        newScript.type = 'text/javascript';
-        newScript.src = './localization.js';
-        document.getElementsByTagName('head')[0].appendChild(newScript);
-        console.log("local...")
-        console.log(localization_json())
+        console.log(validation_json);
         var $registerInputs = $('#register input[type=text]');
         $registerInputs.on('invalid', function () {
             if ($(this).get(0).validity.valueMissing) {
