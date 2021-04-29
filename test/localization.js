@@ -3,12 +3,14 @@ function localization_json(){
             "en" : {
             "Please fill out this field.":	"Please fill out this field.",
             "Please enter the same email address again.":	"Please enter the same email address again.",
-            "Please select an item in the list.":	"Please select an item in the list."
+            "Please select an item in the list.":	"Please select an item in the list.",
+            "Please enter no more than 128 characters.": "Please enter no more than 128 characters."
         },
         "zh-TW" : {
             "Please fill out this field." : "請填寫此字段。",
             "Please enter the same email address again." : "請再次輸入相同的電子郵件地址。",
-            "Please select an item in the list." : "請在列表中選擇一個項目。"
+            "Please select an item in the list." : "請在列表中選擇一個項目。",
+            "Please enter no more than 128 characters.": "yet to be converted"
         },
         "es":{
             "Please fill out this field.":"Por favor rellene este campo.",
