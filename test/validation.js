@@ -6,7 +6,7 @@ $(window).on('load', function () {
         var lang = new URLSearchParams(window.location.search).get('lang')
         
         if (lang != null){
-            var $registerInputs = $('#register input[type=text]');
+            var $registerInputs = $('#register input[type=text], #register select');
             $registerInputs.on('invalid', function () {
                 if ($(this).get(0).validity.valueMissing) {
                     $(this).get(0).setCustomValidity(validation_json[lang][error_category["valueMissing"]]);
@@ -20,11 +20,4 @@ $(window).on('load', function () {
             });
         }
     }, 5000);
-
-    function getErrorCategories(){
-        return {
-            "valueMissing": "Please fill out this field.",
-            "value128Characters": "Please enter no more than 128 characters."
-        }
-    }
 });

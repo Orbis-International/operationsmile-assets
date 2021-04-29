@@ -1,6 +1,6 @@
 var emailField = document.getElementById('email-address')
     , confirmEmailField = document.getElementById('confirm-email-address');
-
+console.log(localization_json());
 function validateEmail(){
     if(emailField.value.trim() != confirmEmailField.value.trim()) {
         confirmEmailField.setCustomValidity('Please enter the same email address again.');
