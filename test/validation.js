@@ -1,10 +1,8 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
     setTimeout(function(){
-        $.getJSON('localization.json', function(data) {
-            console.log(data);
-          });
-        console.log("*******Validation error messages**********");
+        console.log("local...")
+        console.log(localization_json())
         var $registerInputs = $('#register input[type=text]');
         $registerInputs.on('invalid', function () {
             if ($(this).get(0).validity.valueMissing) {
