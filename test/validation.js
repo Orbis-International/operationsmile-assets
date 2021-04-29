@@ -1,8 +1,9 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
     setTimeout(function(){
-        var data = require('./localization.json');
-        console.log(data);
+        $.getJSON('localization.json', function(data) {
+            console.log(data);
+          });
         console.log("*******Validation error messages**********");
         var $registerInputs = $('#register input[type=text]');
         $registerInputs.on('invalid', function () {
