@@ -6,7 +6,7 @@ const cssnano = require('@node-minify/cssnano');
 // Test Worker
 minify({
     compressor: noCompress,
-    input: './localization.js',
+    input: 'localization.js',
     output: './temp/test/bundle.js',
     callback: function(err, min) {}
 });
