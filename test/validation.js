@@ -46,5 +46,6 @@ $(window).on('load', function () {
 
         emailField.onchange = validateEmail;
         confirmEmailField.onchange = validateEmail;
+        setErrorMessage("vishnu");
     }, 3000);
 });

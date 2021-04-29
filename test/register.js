@@ -1,11 +1,15 @@
 $(window).on('load', function () {
     var errorMessage = ""
+    errorMessage = "Please enter no more than 60000 characters.";
     init();
 });
 
-function init() {
+function setErrorMessage(msg){
+    errorMessage = msg;
+}
 
-    errorMessage = "Please enter no more than 60000 characters.";
+function init() {
+    
     var hasError;
 
     $( document ).find( "textarea" ).on( "input change propertychange", function() {
