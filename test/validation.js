@@ -16,9 +16,9 @@ $(window).on('load', function () {
                 $(this).get(0).setCustomValidity(validation_json[lang][error_category["value128Characters"]]);
             }
         });
-        $registerInputs.on('input, change', function () {
-            $(this).get(0).setCustomValidity('');
-        });
+        // $registerInputs.on('input, change', function () {
+        //     $(this).get(0).setCustomValidity('');
+        // });
 
         function validateEmail(){
             if(emailField.value.trim() != confirmEmailField.value.trim()) {
