@@ -12,13 +12,15 @@ $(window).on('load', function () {
         $registerInputs.on('invalid', function () {
             if ($(this).get(0).validity.valueMissing) {
                 $(this).get(0).setCustomValidity(validation_json[lang][error_category["valueMissing"]]);
-            } else {
+            } else if ($(this).get(0).validity.patternMismatch) {
                 $(this).get(0).setCustomValidity(validation_json[lang][error_category["value128Characters"]]);
+            } else if ($(this).get(0).validity.typeMismatch) {
+                $(this).get(0).setCustomValidity(validation_json[lang][error_category["invalidEmail"]]);
             }
         });
-        // $registerInputs.on('input, change', function () {
-        //     $(this).get(0).setCustomValidity('');
-        // });
+        $registerInputs.on('input, change', function () {
+            $(this).get(0).setCustomValidity('');
+        });
 
         function validateEmail(){
             if(emailField.value.trim() != confirmEmailField.value.trim()) {
@@ -27,20 +29,20 @@ $(window).on('load', function () {
                 confirmEmailField.setCustomValidity('');
             }
 
-            if(	emailField.validity.typeMismatch ) {
-                emailField.setCustomValidity(validation_json[lang][error_category["invalidEmail"]]);
-            } else {
-                emailField.setCustomValidity('');
-            }
+            // if(	emailField.validity.typeMismatch ) {
+            //     emailField.setCustomValidity(validation_json[lang][error_category["invalidEmail"]]);
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
 
-            if( emailField.validity.patternMismatch ) {
-                emailField.setCustomValidity(validation_json[lang][error_category["value128Characters"]]);
-            } else {
-                emailField.setCustomValidity('');
-            }
+            // if( emailField.validity.patternMismatch ) {
+            //     emailField.setCustomValidity(validation_json[lang][error_category["value128Characters"]]);
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
         }
 
-        emailField.onchange = validateEmail;
-        confirmEmailField.oninput = validateEmail;
+        emailField.onchange = validateEmail();
+        confirmEmailField.oninput = validateEmail();
     }, 2000);    
 });
