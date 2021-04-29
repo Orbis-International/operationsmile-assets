@@ -10,7 +10,7 @@ $(window).on('load', function () {
         lang = lang == null ? "en" : lang
         var $registerInputs = $('#register input[type=text], #register select');
         $registerInputs.on('invalid', function () {
-            console.log.("...invalid")
+            console.log("...invalid")
             console.log($(this))
             console.log($(this).get(0).validity)
             if ($(this).get(0).validity.valueMissing) {
