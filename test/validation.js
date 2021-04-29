@@ -1,6 +1,10 @@
 $(window).on('load', function () {
     console.log("Window Loaded");
     setTimeout(function(){
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.src = './localization.js';
+        document.getElementsByTagName('head')[0].appendChild(newScript);
         console.log("local...")
         console.log(localization_json())
         var $registerInputs = $('#register input[type=text]');
