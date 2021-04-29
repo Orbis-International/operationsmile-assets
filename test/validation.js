@@ -21,9 +21,11 @@ $(window).on('load', function () {
         $registerInputs.on('input, change', function () {
             $(this).get(0).setCustomValidity('');
         });
+        
         function validation_message(key){
             return validation_json[lang][error_category[key]]
         }
+
         function validateEmail(){
             if(emailField.value.trim() != confirmEmailField.value.trim()) {
                 confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
