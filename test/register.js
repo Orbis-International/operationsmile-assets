@@ -1,28 +1,28 @@
-var emailField = document.getElementById('email-address')
-    , confirmEmailField = document.getElementById('confirm-email-address');
-console.log(localization_json());
-function validateEmail(){
-    if(emailField.value.trim() != confirmEmailField.value.trim()) {
-        confirmEmailField.setCustomValidity('Please enter the same email address again.');
-    } else {
-        confirmEmailField.setCustomValidity('');
-    }
+// var emailField = document.getElementById('email-address')
+//     , confirmEmailField = document.getElementById('confirm-email-address');
 
-    if(	emailField.validity.typeMismatch ) {
-        emailField.setCustomValidity('Please enter a valid Email Address.');
-    } else {
-        emailField.setCustomValidity('');
-    }
+// function validateEmail(){
+//     if(emailField.value.trim() != confirmEmailField.value.trim()) {
+//         confirmEmailField.setCustomValidity('Please enter the same email address again.');
+//     } else {
+//         confirmEmailField.setCustomValidity('');
+//     }
 
-    if( emailField.validity.patternMismatch ) {
-        emailField.setCustomValidity('Please enter no more than 128 characters.');
-    } else {
-        emailField.setCustomValidity('');
-    }
-}
+//     if(	emailField.validity.typeMismatch ) {
+//         emailField.setCustomValidity('Please enter a valid Email Address.');
+//     } else {
+//         emailField.setCustomValidity('');
+//     }
 
-emailField.onchange = validateEmail;
-confirmEmailField.oninput = validateEmail;
+//     if( emailField.validity.patternMismatch ) {
+//         emailField.setCustomValidity('Please enter no more than 128 characters.');
+//     } else {
+//         emailField.setCustomValidity('');
+//     }
+// }
+
+// emailField.onchange = validateEmail;
+// confirmEmailField.oninput = validateEmail;
 
 $(function () {
 
