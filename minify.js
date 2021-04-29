@@ -4,18 +4,9 @@ const noCompress = require('@node-minify/no-compress');
 const cssnano = require('@node-minify/cssnano');
 
 // Test Worker
-
-
 minify({
     compressor: noCompress,
     input: './test/*.js',
-    output: './temp/test/bundle.js',
-    callback: function(err, min) {}
-});
-
-minify({
-    compressor: noCompress,
-    input: './localization.js',
     output: './temp/test/bundle.js',
     callback: function(err, min) {}
 });
