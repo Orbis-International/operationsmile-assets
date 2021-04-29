@@ -18,6 +18,7 @@ $(window).on('load', function () {
                 $(this).get(0).setCustomValidity(validation_json[lang][error_category["invalidEmail"]]);
             }
         });
+        
         $registerInputs.on('input, change', function () {
             $(this).get(0).setCustomValidity('');
         });
@@ -42,7 +43,7 @@ $(window).on('load', function () {
             // }
         }
 
-        emailField.onchange = validateEmail();
-        confirmEmailField.oninput = validateEmail();
+        // emailField.onchange = validateEmail();
+        // confirmEmailField.oninput = validateEmail();
     }, 2000);    
 });

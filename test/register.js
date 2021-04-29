@@ -105,7 +105,7 @@ $(function () {
     });
 
     $('#register').on('submit', function(e) {
-
+        validateEmail();
         e.preventDefault();
 
         if(!$("[name='nonce']").length) {
