@@ -22,7 +22,7 @@ function validateEmail(){
 }
 
 emailField.onchange = validateEmail;
-confirmEmailField.oninput = validateEmail;
+confirmEmailField.onchange = validateEmail;
 
 $(function () {
 
