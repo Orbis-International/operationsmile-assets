@@ -22,7 +22,7 @@ function localization_json(){
             "Please select an item in the list.": "Seleccione un elemento de la lista.",
             "Please enter no more than 128 characters.": "No ingrese más de 128 caracteres.",
             "Please enter no more than 60000 characters.": "No ingrese más de 60000 caracteres.",
-            "Please enter a valid Email Address.": "Por favor, introduce una dirección de correo electrónico válida."
+            "Please enter a valid Email Address.": "Ingrese una dirección de correo electrónico válida."
         },
         "de":{
             "Please fill out this field." : "Bitte füllen Sie dieses Feld aus.",
@@ -46,7 +46,7 @@ function localization_json(){
             "Please select an item in the list.": "Veuillez sélectionner un élément dans la liste.",
             "Please enter no more than 128 characters.": "Veuillez ne pas saisir plus de 128 caractères.",
             "Please enter no more than 60000 characters.": "Veuillez ne pas saisir plus de 60000 caractères.",
-            "Please enter a valid Email Address.": "S'il vous plaît, mettez une adresse email valide."
+            "Please enter a valid Email Address.": "Veuillez saisir une adresse électronique valide."
         },
         "pt":{
             "Please fill out this field.": "Por favor, preencha este campo.",
