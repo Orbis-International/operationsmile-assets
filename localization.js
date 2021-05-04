@@ -30,7 +30,7 @@ function localization_json(){
             "Please select an item in the list." : "Bitte wählen Sie einen Eintrag in der Liste.",
             "Please enter no more than 128 characters.": "Bitte geben Sie nicht mehr als 128 Zeichen ein.",
             "Please enter no more than 60000 characters.": "Bitte geben Sie nicht mehr als 60000 Zeichen ein.",
-            "Please enter a valid Email Address.": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+            "Please enter a valid Email Address.": "Geben Sie bitte eine gültige E-Mail-Adresse ein."
         },
         "zh-CN":{
             "Please fill out this field." : "请填写此栏。",
@@ -38,7 +38,7 @@ function localization_json(){
             "Please select an item in the list." : "请在列表中选择一项。",
             "Please enter no more than 128 characters.": "请输入不超过128个字符。",
             "Please enter no more than 60000 characters.": "请输入不超过60000个字符。",
-            "Please enter a valid Email Address.": "请输入有效的电子邮件地址。"
+            "Please enter a valid Email Address.": "请输入一个有效的电子邮件地址。"
         },
         "fr":{
             "Please fill out this field.": "Veuillez remplir ce champ.",
@@ -54,7 +54,7 @@ function localization_json(){
             "Please select an item in the list.": "Selecione um item da lista.",
             "Please enter no more than 128 characters.": "Insira no máximo 128 caracteres.",
             "Please enter no more than 60000 characters.": "Não digite mais de 60.000 caracteres.",
-            "Please enter a valid Email Address.": "Por favor insira um endereço de e-mail válido."
+            "Please enter a valid Email Address.": "Digite um endereço de e-mail válido."
         },
         "ja":{
             "Please fill out this field." : "このフィールドを記入してください。",
@@ -70,7 +70,7 @@ function localization_json(){
             "Please select an item in the list." :  "Пожалуйста, выберите элемент в списке.",
             "Please enter no more than 128 characters.": "Пожалуйста, введите не более 128 символов.",
             "Please enter no more than 60000 characters.": "Пожалуйста, введите не более 60000 символов.",
-            "Please enter a valid Email Address.": "Пожалуйста, введите действительный адрес электронной почты."
+            "Please enter a valid Email Address.": "Введите действительный адрес электронной почты."
         },
         "ko":{
             "Please fill out this field.": "이 필드를 작성하십시오.",
@@ -78,7 +78,7 @@ function localization_json(){
             "Please select an item in the list.": "목록에서 항목을 선택하십시오.",
             "Please enter no more than 128 characters.": "128 자 이하로 입력하십시오.",
             "Please enter no more than 60000 characters.": "60000 자 이하로 입력하십시오.",
-            "Please enter a valid Email Address.": "유효한 이메일 주소를 입력하세요."
+            "Please enter a valid Email Address.": "유효한 이메일 주소를 입력하십시오."
         },
         "it":{
             "Please fill out this field." : "Perfavore compila questo campo.",
@@ -86,7 +86,7 @@ function localization_json(){
             "Please select an item in the list." : "Si prega di selezionare un elemento nell'elenco.",
             "Please enter no more than 128 characters.": "Si prega di inserire non più di 128 caratteri.",
             "Please enter no more than 60000 characters.": "Si prega di inserire non più di 60000 caratteri.",
-            "Please enter a valid Email Address.": "Si prega di inserire un indirizzo email valido."
+            "Please enter a valid Email Address.": "Inserisci un indirizzo email valido."
         },
         "vi":{
             "Please fill out this field.": "Vui lòng điền vào trường này.",
