@@ -18,9 +18,9 @@ $(window).on('load', function () {
                 }
             });
 
-        $registerInputs.on('change', function () {
-            $(this).get(0).setCustomValidity('');
-        });
+        // $registerInputs.on('change', function () {
+        //     $(this).get(0).setCustomValidity('');
+        // });
 
         function validation_message(key){
             return validation_json[lang][error_category[key]]
