@@ -18,7 +18,7 @@ $(window).on('load', function () {
                 }
             });
 
-        $registerInputs.on('input, change', function () {
+        $registerInputs.on('change', function () {
             $(this).get(0).setCustomValidity('');
         });
 
