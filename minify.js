@@ -35,6 +35,13 @@ minify({
 // Production Worker
 minify({
     compressor: noCompress,
+    input: './localization.js',
+    output: './temp/prod/localization.js',
+    callback: function(err, min) {}
+});
+
+minify({
+    compressor: noCompress,
     input: './prod/*.js',
     output: './temp/prod/bundle.js',
     callback: function(err, min) {}
