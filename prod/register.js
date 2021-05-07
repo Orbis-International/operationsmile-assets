@@ -1,32 +1,15 @@
-var emailField = document.getElementById('email-address')
-    , confirmEmailField = document.getElementById('confirm-email-address');
+$(window).on('load', function () {
+    var errorMessage = ""
+    errorMessage = "Please enter no more than 60000 characters.";
+    init();
+});
 
-function validateEmail(){
-    if(emailField.value.trim() != confirmEmailField.value.trim()) {
-        confirmEmailField.setCustomValidity('Please enter the same email address again.');
-    } else {
-        confirmEmailField.setCustomValidity('');
-    }
-
-    if(	emailField.validity.typeMismatch ) {
-        emailField.setCustomValidity('Please enter a valid email address.');
-    } else {
-        emailField.setCustomValidity('');
-    }
-
-    if( emailField.validity.patternMismatch ) {
-        emailField.setCustomValidity('Please enter no more than 128 characters.');
-    } else {
-        emailField.setCustomValidity('');
-    }
+function setErrorMessage(msg){
+    errorMessage = msg;
 }
 
-emailField.onchange = validateEmail;
-confirmEmailField.oninput = validateEmail;
+function init() {
 
-$(function () {
-
-    var errorMessage = "Please enter no more than 60000 characters.";
     var hasError;
 
     $( document ).find( "textarea" ).on( "input change propertychange", function() {
@@ -185,4 +168,4 @@ $(function () {
             window.location.pathname = window.location.pathname + '/tz/' + selectedTz;
         }
     });
-});
+};
