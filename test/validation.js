@@ -34,7 +34,7 @@ $(window).on('load', function () {
             $registerInputs.on('invalid', function () {
                 if ($(this).get(0).validity.valueMissing) {
                     $(this).get(0).setCustomValidity(validation_message("valueMissing"));
-                } else if ($(this).get(0).validity.patternMismatch && $(this).get(0).id == 'email-address'){
+                } else if (($(this).get(0).validity.patternMismatch) && ($(this).get(0).id === 'email-address')){
                     $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
                 }else if ($(this).get(0).validity.patternMismatch){
                     $(this).get(0).setCustomValidity(validation_message("value128Characters"));
