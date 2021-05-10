@@ -7,39 +7,14 @@ $(window).on('load', function () {
         var validation_json = localization_json();
         var lang = new URLSearchParams(window.location.search).get('lang')
 
-        function validateEmail(){
-            if(emailField.value.trim() != confirmEmailField.value.trim()) {
-                confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
-            } else {
-                confirmEmailField.setCustomValidity('');
-            }
-
-            // if(emailField.validity.valueMissing ) {
-            //     emailField.setCustomValidity(validation_message("valueMissing"));
-            // } else {
-            //     emailField.setCustomValidity('');
-            // }
-
-            // if( emailField.validity.patternMismatch ) {
-            //     emailField.setCustomValidity(validation_message("invalidEmail"));
-            // } else {
-            //     emailField.setCustomValidity('');
-            // }
-        }
-
-        emailField.onchange = validateEmail;
-        confirmEmailField.onchange = validateEmail;
-
         var $registerInputs = $('#register input[type=text],#register input[type=email], #register select');
             $registerInputs.on('invalid', function () {
                 if ($(this).get(0).validity.valueMissing) {
                     $(this).get(0).setCustomValidity(validation_message("valueMissing"));
                 } else if ($(this).get(0).validity.patternMismatch){
-                    if ($(this).get(0).id == "email-address") {
-                        $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
-                    } else {
-                        $(this).get(0).setCustomValidity(validation_message("value128Characters"));
-                    }
+                    $(this).get(0).setCustomValidity(validation_message("value128Characters"));
+                }else if ($(this).get(0).validity.typeMismatch){
+                    $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
                 }
             });
 
@@ -51,6 +26,28 @@ $(window).on('load', function () {
             return validation_json[lang][error_category[key]]
         }
 
+        function validateEmail(){
+            if(emailField.value.trim() != confirmEmailField.value.trim()) {
+                confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
+            } else {
+                confirmEmailField.setCustomValidity('');
+            }
+
+            // if(	emailField.validity.typeMismatch ) {
+            //     emailField.setCustomValidity(validation_message("invalidEmail"));
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
+
+            // if( emailField.validity.patternMismatch ) {
+            //     emailField.setCustomValidity(validation_message("value128Characters"));
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
+        }
+
+        emailField.onchange = validateEmail;
+        confirmEmailField.onchange = validateEmail;
         setErrorMessage(validation_message("value60000Characters"));
 
         function getErrorCategories(){
