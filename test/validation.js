@@ -7,6 +7,29 @@ $(window).on('load', function () {
         var validation_json = localization_json();
         var lang = new URLSearchParams(window.location.search).get('lang')
 
+        function validateEmail(){
+            if(emailField.value.trim() != confirmEmailField.value.trim()) {
+                confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
+            } else {
+                confirmEmailField.setCustomValidity('');
+            }
+
+            if(emailField.validity.valueMissing ) {
+                emailField.setCustomValidity(validation_message("valueMissing"));
+            } else {
+                emailField.setCustomValidity('');
+            }
+
+            if( emailField.validity.patternMismatch ) {
+                emailField.setCustomValidity(validation_message("invalidEmail"));
+            } else {
+                emailField.setCustomValidity('');
+            }
+        }
+
+        emailField.onchange = validateEmail;
+        confirmEmailField.onchange = validateEmail;
+
         var $registerInputs = $('#register input[type=text], #register select');
             $registerInputs.on('invalid', function () {
                 if ($(this).get(0).validity.valueMissing) {
@@ -26,28 +49,6 @@ $(window).on('load', function () {
             return validation_json[lang][error_category[key]]
         }
 
-        function validateEmail(){
-            if(emailField.value.trim() != confirmEmailField.value.trim()) {
-                confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
-            } else {
-                confirmEmailField.setCustomValidity('');
-            }
-
-            // if(emailField.validity.valueMissing ) {
-            //     emailField.setCustomValidity(validation_message("valueMissing"));
-            // } else {
-            //     emailField.setCustomValidity('');
-            // }
-
-            // if( emailField.validity.patternMismatch ) {
-            //     emailField.setCustomValidity(validation_message("invalidEmail"));
-            // } else {
-            //     emailField.setCustomValidity('');
-            // }
-        }
-
-        emailField.onchange = validateEmail;
-        confirmEmailField.onchange = validateEmail;
         setErrorMessage(validation_message("value60000Characters"));
 
         function getErrorCategories(){
