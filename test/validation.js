@@ -14,30 +14,32 @@ $(window).on('load', function () {
                 confirmEmailField.setCustomValidity('');
             }
 
-            if(emailField.validity.valueMissing ) {
-                emailField.setCustomValidity(validation_message("valueMissing"));
-            } else {
-                emailField.setCustomValidity('');
-            }
+            // if(emailField.validity.valueMissing ) {
+            //     emailField.setCustomValidity(validation_message("valueMissing"));
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
 
-            if( emailField.validity.patternMismatch ) {
-                emailField.setCustomValidity(validation_message("invalidEmail"));
-            } else {
-                emailField.setCustomValidity('');
-            }
+            // if( emailField.validity.patternMismatch ) {
+            //     emailField.setCustomValidity(validation_message("invalidEmail"));
+            // } else {
+            //     emailField.setCustomValidity('');
+            // }
         }
 
         emailField.onchange = validateEmail;
         confirmEmailField.onchange = validateEmail;
 
-        var $registerInputs = $('#register input[type=text], #register select');
+        var $registerInputs = $('#register input[type=text],#register input[type=email], #register select');
             $registerInputs.on('invalid', function () {
                 if ($(this).get(0).validity.valueMissing) {
                     $(this).get(0).setCustomValidity(validation_message("valueMissing"));
-                } else if (($(this).get(0).validity.patternMismatch) && ($(this).get(0).id === 'email-address')){
-                    $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
-                }else if ($(this).get(0).validity.patternMismatch){
-                    $(this).get(0).setCustomValidity(validation_message("value128Characters"));
+                } else if ($(this).get(0).validity.patternMismatch){
+                    if ($(this).get(0).id == "email-address") {
+                        $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
+                    } else {
+                        $(this).get(0).setCustomValidity(validation_message("value128Characters"));
+                    }
                 }
             });
 
