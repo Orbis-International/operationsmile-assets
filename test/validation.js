@@ -30,6 +30,8 @@ $(window).on('load', function () {
 
         function validateEmail(){
             const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            console.log("test");
+            console.log(re.test(emailField.value.trim()));
             if (re.test(emailField.value.trim())) {
                 emailField.setCustomValidity(validation_message("invalidEmail"));
             }
