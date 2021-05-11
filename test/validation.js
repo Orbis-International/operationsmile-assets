@@ -12,7 +12,7 @@ $(window).on('load', function () {
                 if ($(this).get(0).validity.valueMissing) {
                     $(this).get(0).setCustomValidity(validation_message("valueMissing"));
                 } else if ($(this).get(0).validity.patternMismatch){
-                    if ($(this).get(0).id == "email-address") {
+                    if ($(this).get(0).type == "email") {
                         $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
                     } else {
                         $(this).get(0).setCustomValidity(validation_message("value128Characters"));
