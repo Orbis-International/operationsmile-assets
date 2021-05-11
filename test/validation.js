@@ -29,6 +29,10 @@ $(window).on('load', function () {
         }
 
         function validateEmail(){
+            const re = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+            if (re.test(emailField.value.trim())) {
+                emailField.setCustomValidity(validation_message("invalidEmail"));
+            }
             if(emailField.value.trim() != confirmEmailField.value.trim()) {
                 confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
             } else {
