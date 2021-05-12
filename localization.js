@@ -95,6 +95,14 @@ function localization_json(){
             "Please enter no more than 128 characters.": "Vui lòng nhập không quá 128 ký tự.",
             "Please enter no more than 60000 characters.": "Vui lòng nhập không quá 60000 ký tự.",
             "Please enter a valid Email Address.": "Vui lòng nhập Địa chỉ Email hợp lệ."
+        },
+        "mn":{
+            "Please fill out this field.": "Энэ талбарыг бөглөнө үү.",
+            "Please enter the same email address again.": "И-мэйл хаягаа дахин оруулна уу.",
+            "Please select an item in the list.": "Жагсаалтаас нэг зүйлийг сонгоно уу.",
+            "Please enter no more than 128 characters.": "128-аас илүүгүй тэмдэгт оруулна уу.",
+            "Please enter no more than 60000 characters.": "60000-аас илүүгүй тэмдэгт оруулна уу.",
+            "Please enter a valid Email Address.": "Зөв имэйл хаяг оруулна уу."
         }
     }
 }
