@@ -29,11 +29,11 @@ $(window).on('load', function () {
         }
 
         function validateEmail(){
-            const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            const re = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
             if (!re.test(emailField.value.trim())) {
                 emailField.setCustomValidity(validation_message("invalidEmail"));
             }
-            if(emailField.value.trim() != confirmEmailField.value.trim()) {
+            if(emailField.value.trim().toLowerCase() != confirmEmailField.value.trim().toLowerCase()) {
                 confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
             } else {
                 confirmEmailField.setCustomValidity('');
