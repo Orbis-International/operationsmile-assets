@@ -4,7 +4,7 @@ $(window).on('load', function () {
     init();
 });
 
-function setErrorMessage(msg){
+function setErrorMessage(msg) {
     errorMessage = msg;
 }
 
@@ -12,33 +12,28 @@ function init() {
 
     var hasError;
 
-    $( document ).find( "textarea" ).on( "input change propertychange", function() {
+    $(document).find("textarea").on("input change propertychange", function () {
 
-        var pattern = $( this ).attr( "pattern" );
+        var pattern = $(this).attr("pattern");
 
-        if(typeof pattern !== typeof undefined && pattern !== false)
-        {
-            var patternRegex = new RegExp( "^" + pattern.replace(/^\^|\$$/g, '') + "$", "g" );
-            var $content = $( this ).val().replace(/[\r\n]+/gm, '');
+        if (typeof pattern !== typeof undefined && pattern !== false) {
+            var patternRegex = new RegExp("^" + pattern.replace(/^\^|\$$/g, '') + "$", "g");
+            var $content = $(this).val().replace(/[\r\n]+/gm, '');
 
-            hasError = !$content.match( patternRegex );
+            hasError = !$content.match(patternRegex);
 
-            if ( typeof this.setCustomValidity === "function")
-            {
-                this.setCustomValidity( hasError ? errorMessage : "" );
+            if (typeof this.setCustomValidity === "function") {
+                this.setCustomValidity(hasError ? errorMessage : "");
             }
-            else
-            {
-                $( this ).toggleClass( "error", !!hasError );
-                $( this ).toggleClass( "ok", !hasError );
+            else {
+                $(this).toggleClass("error", !!hasError);
+                $(this).toggleClass("ok", !hasError);
 
-                if ( hasError )
-                {
-                    $( this ).attr( "title", errorMessage );
+                if (hasError) {
+                    $(this).attr("title", errorMessage);
                 }
-                else
-                {
-                    $( this ).removeAttr( "title" );
+                else {
+                    $(this).removeAttr("title");
                 }
             }
         }
@@ -72,7 +67,7 @@ function init() {
     var slim = [];
 
     if (!detectTouchscreen()) {
-        $('.select select').each(function() {
+        $('.select select').each(function () {
             slim[this.id] = new SlimSelect({
                 select: '#' + this.id,
                 placeholder: 'Choose one...'
@@ -80,18 +75,18 @@ function init() {
         });
     }
 
-    $('.is-multiple select').each(function() {
+    $('.is-multiple select').each(function () {
         slim[this.id] = new SlimSelect({
             select: '#' + this.id,
             placeholder: 'Choose many...'
         });
     });
 
-    $('#register').on('submit', function(e) {
+    $('#register').on('submit', function (e) {
 
         e.preventDefault();
 
-        if(!$("[name='nonce']").length) {
+        if (!$("[name='nonce']").length) {
             $('<input>').attr('type', 'hidden').attr('name', 'nonce').attr('value', formToken).appendTo('#register');
         }
 
@@ -104,36 +99,36 @@ function init() {
         $inputs.prop('disabled', true);
 
         axios.post($(this).attr('action'), formData)
-            .then(function(response) {
+            .then(function (response) {
                 var $formContainer = $('#form-container');
                 var $webinarSuccess = $('#webinar-success');
                 var $joinUrl = $('a.join-url');
-                var $webinarDate = ( isVisible($('.webinar-date-mobile')) ) ? $('.webinar-date-mobile') : $('.webinar-date-desktop');
+                var $webinarDate = (isVisible($('.webinar-date-mobile'))) ? $('.webinar-date-mobile') : $('.webinar-date-desktop');
                 var $webinarOccurrences = $($webinarDate, '.webinar-times li:first');
 
                 $joinUrl.attr('href', response.data.join_url);
                 $joinUrl.html(response.data.join_url);
 
-                if( $webinarOccurrences.length ) {
-                    $('.webinar-join-date').html( '<strong>Date:</strong> ' +$webinarOccurrences.clone().text() );
+                if ($webinarOccurrences.length) {
+                    $('.webinar-join-date').html('<strong>Date:</strong> ' + $webinarOccurrences.clone().text());
                 } else {
-                    $('.webinar-join-date').html( '<strong>Date:</strong> ' + $($webinarDate, 'p').clone().text() );
+                    $('.webinar-join-date').html('<strong>Date:</strong> ' + $($webinarDate, 'p').clone().text());
                 }
 
                 $('#form-error').hide();
                 $formContainer.addClass('is-hidden');
                 $webinarSuccess.removeClass('is-hidden');
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 var $errorElement = $('#form-error');
 
-                if(typeof error.response.data !== 'undefined' && error.response.data.code) {
-                    $errorElement.html( 'Sorry, there was an error with your registration. Please contact <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#121;&#098;&#101;&#114;&#115;&#105;&#103;&#104;&#116;&#046;&#111;&#114;&#103;">support@cybersight.org</a> for help.' );
+                if (typeof error.response.data !== 'undefined' && error.response.data.code) {
+                    $errorElement.html('Sorry, there was an error with your registration. Please contact <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#121;&#098;&#101;&#114;&#115;&#105;&#103;&#104;&#116;&#046;&#111;&#114;&#103;">support@cybersight.org</a> for help.');
                     $errorElement.removeClass('is-hidden');
                     $errorElement[0].scrollIntoView();
                 }
             })
-            .then(function() {
+            .then(function () {
                 $inputs.prop('disabled', false);
                 $('.button-register').removeClass('is-loading');
             });
@@ -141,19 +136,21 @@ function init() {
         return false;
     });
 
-    $('.timezone-switcher').on('click', function(e) {
+    $('.timezone-switcher').on('click', function (e) {
+        console.log("********timezone *****");
         e.preventDefault();
         $('#timezone-modal').addClass('is-active');
         $('html').addClass('is-clipped');
     });
 
-    $('.modal-cancel').on('click', function(e) {
+    $('.modal-cancel').on('click', function (e) {
+        console.log("********timezone *****");
         e.preventDefault();
         $('#timezone-modal').removeClass('is-active');
         $('html').removeClass('is-clipped');
     });
 
-    $('#switch-timezone').on('click', function(e) {
+    $('#switch-timezone').on('click', function (e) {
         e.preventDefault();
 
         var pathname = window.location.pathname;
@@ -162,7 +159,7 @@ function init() {
 
         var selectedTz = (detectTouchscreen()) ? $('#switch-time-zone').val() : slim['switch-time-zone'].selected();
 
-        if(pathname) {
+        if (pathname) {
             window.location.pathname = pathname + 'tz/' + selectedTz;
         } else {
             window.location.pathname = window.location.pathname + '/tz/' + selectedTz;

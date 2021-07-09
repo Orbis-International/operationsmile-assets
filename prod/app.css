@@ -36,6 +36,7 @@
 /* Google Translate Widget */
 body {
     top: 0 !important;
+    background: white;
 }
 
 #google_translate_element {
@@ -138,7 +139,6 @@ body {
     min-width: 262px;
     background-color: #00a3e0;
 }
-
 
 .mobile-language-select {
     width: 8em;

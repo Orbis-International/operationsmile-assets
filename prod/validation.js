@@ -1,5 +1,5 @@
 $(window).on('load', function () {
-    setTimeout(function(){
+    setTimeout(function () {
         var emailField = document.getElementById('email-address')
             , confirmEmailField = document.getElementById('confirm-email-address');
 
@@ -8,26 +8,32 @@ $(window).on('load', function () {
         var lang = new URLSearchParams(window.location.search).get('lang')
 
         var $registerInputs = $('#register input[type=text],#register input[type=email], #register select');
-            $registerInputs.on('invalid', function () {
-                if ($(this).get(0).validity.valueMissing) {
-                    $(this).get(0).setCustomValidity(validation_message("valueMissing"));
-                } else if ($(this).get(0).validity.patternMismatch){
-                    $(this).get(0).setCustomValidity(validation_message("value128Characters"));
-                }else if ($(this).get(0).validity.typeMismatch){
+        $registerInputs.on('invalid', function () {
+            if ($(this).get(0).validity.valueMissing) {
+                $(this).get(0).setCustomValidity(validation_message("valueMissing"));
+            } else if ($(this).get(0).validity.patternMismatch) {
+                if ($(this).get(0).type == "email") {
                     $(this).get(0).setCustomValidity(validation_message("invalidEmail"));
+                } else {
+                    $(this).get(0).setCustomValidity(validation_message("value128Characters"));
                 }
-            });
+            }
+        });
 
         $registerInputs.on('change', function () {
             $(this).get(0).setCustomValidity('');
         });
 
-        function validation_message(key){
+        function validation_message(key) {
             return validation_json[lang][error_category[key]]
         }
 
-        function validateEmail(){
-            if(emailField.value.trim() != confirmEmailField.value.trim()) {
+        function validateEmail() {
+            const re = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!re.test(emailField.value.trim())) {
+                emailField.setCustomValidity(validation_message("invalidEmail"));
+            }
+            if (emailField.value.trim().toLowerCase() != confirmEmailField.value.trim().toLowerCase()) {
                 confirmEmailField.setCustomValidity(validation_message("confirmEmail"));
             } else {
                 confirmEmailField.setCustomValidity('');
@@ -50,7 +56,7 @@ $(window).on('load', function () {
         confirmEmailField.onchange = validateEmail;
         setErrorMessage(validation_message("value60000Characters"));
 
-        function getErrorCategories(){
+        function getErrorCategories() {
             return {
                 "valueMissing": "Please fill out this field.",
                 "value128Characters": "Please enter no more than 128 characters.",
