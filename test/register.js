@@ -1,6 +1,7 @@
 $(window).on('load', function () {
     var errorMessage = ""
     errorMessage = "Please enter no more than 60000 characters.";
+    $("#middle-name").closest(".column").hide();
     init();
 });
 
