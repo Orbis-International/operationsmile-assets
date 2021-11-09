@@ -124,7 +124,7 @@ function init() {
                 var $errorElement = $('#form-error');
 
                 if (typeof error.response.data !== 'undefined' && error.response.data.code) {
-                    $errorElement.html('Sorry, there was an error with your registration. Please contact <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#121;&#098;&#101;&#114;&#115;&#105;&#103;&#104;&#116;&#046;&#111;&#114;&#103;">support@cybersight.org</a> for help.');
+                    $errorElement.html('Sorry, there was an error with your registration. Please contact <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#111;&#112;&#101;&#114;&#97;&#116;&#105;&#111;&#110;&#115;&#109;&#105;&#108;&#101;&#97;&#99;&#97;&#100;&#101;&#109;&#121;&#46;&#111;&#114;&#103;">support@operationsmileacademy.org</a> for help.');
                     $errorElement.removeClass('is-hidden');
                     $errorElement[0].scrollIntoView();
                 }
